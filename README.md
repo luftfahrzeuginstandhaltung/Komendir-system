@@ -1,4 +1,4 @@
-# ✈️ LexKomendirAirCraft — KOM-AK-X1-ALPHA
+# LexKomendirAircraft
 
 ### Projeto Aeronáutico Nacional · Brasil · 2026
 
@@ -15,7 +15,7 @@
 
 ## 🇧🇷 Sobre o Projeto
 
-O **KOM-AK-X1-ALPHA** é um projeto aeronáutico brasileiro voltado para pesquisa, desenvolvimento e formação técnica em engenharia e manutenção de aeronaves. Seguindo o padrão internacional **ATA 100**, busca integrar conhecimento teórico e prático com foco em inovação e soberania tecnológica.
+O **LexKomendirAircraft** é uma proposta brasileira de engenharia, pesquisa aplicada e formação técnica em manutenção aeronáutica e operação estratégica. O ecossistema integra documentação, análise, visualização holográfica e organização de dados com foco em inovação e soberania tecnológica.
 
 **Do Brasil para o Mundo.**
 
@@ -25,7 +25,8 @@ O **KOM-AK-X1-ALPHA** é um projeto aeronáutico brasileiro voltado para pesquis
 
 | Item | Detalhe |
 |---|---|
-| **Nome Oficial** | KOM-AK-X1-ALPHA |
+| **Nome Oficial** | LexKomendirAircraft |
+| **Ciclo de Operação** | KOM-AK-X1-ALPHA |
 | **Proponente** | LexKomendirAirCraft |
 | **Sede** | Brasil |
 | **Padrão Técnico** | ATA 100 |
@@ -58,7 +59,11 @@ O **KOM-AK-X1-ALPHA** é um projeto aeronáutico brasileiro voltado para pesquis
 ├── index_holograma.html
 ├── assets/
 │   ├── script.js
-���   └── styles.css
+│   └── styles.css
+├── start.sh
+├── start.bat
+├── DEPLOY.md
+├── README_SNIPPET.md
 ├── .gitignore
 └── venv/
 ```
@@ -139,7 +144,7 @@ Este projeto tem caráter conceitual, acadêmico e de pesquisa aplicada. Não su
 
 ## 🏁 Visão Final
 
-O **LexKomendirAirCraft — KOM-AK-X1-ALPHA** representa uma proposta de inovação em engenharia aeronáutica brasileira, unindo:
+O **LexKomendirAircraft** representa uma proposta de inovação em engenharia aeronáutica brasileira, unindo:
 - tecnologia
 - documentação técnica
 - pesquisa aplicada
@@ -151,6 +156,6 @@ O **LexKomendirAirCraft — KOM-AK-X1-ALPHA** representa uma proposta de inovaç
 ---
 
 <p align="center">
-  <strong>🇧🇷 LexKomendirAirCraft</strong><br>
+  <strong>🇧🇷 LexKomendirAircraft</strong><br>
   <em>Do Brasil para o Mundo</em>
 </p>
