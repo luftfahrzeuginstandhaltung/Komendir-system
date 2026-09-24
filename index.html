@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Komendir System</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header><h1>Komendir System</h1><p>Painel operacional</p></header>
+    <section class="stats">
+      <article><span>Total</span><strong id="total">0</strong></article>
+      <article><span>Pendentes</span><strong id="pending">0</strong></article>
+      <article><span>Concluídos</span><strong id="done">0</strong></article>
+      <article><span>Valor total</span><strong id="value">R$ 0,00</strong></article>
+    </section>
+    <section class="panel">
+      <div class="toolbar"><h2>Registros</h2><select id="filter"><option value="all">Todos</option><option value="pendente">Pendentes</option><option value="em andamento">Em andamento</option><option value="concluido">Concluídos</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Cliente</th><th>Status</th><th>Valor</th><th>Data</th></tr></thead><tbody id="records"></tbody></table></div>
+    </section>
+  </main>
+  <script src="assets/script.js"></script>
+</body>
+</html>

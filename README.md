@@ -1,50 +1,13 @@
-# Komendir-system
-# ✈️ LexKomendirAirCraft — KOM-AK-X1-ALPHA
+# Komendir System
 
-### Projeto Aeronáutico Nacional · Brasil · 2026
+Dashboard estático para GitHub Pages.
 
----
+## Publicação
 
-## 📜 Lemas
+O site é servido pelo arquivo `index.html` e pode ser publicado em **Settings → Pages → Deploy from a branch → main → / (root)**.
 
-> **OCULUS EXERCITUS · FIDES ET HONOR**
-> *O Olho do Exército — Fidelidade e Honra*
->
-> **MUITO ALTO, MUITO LONGE, SEMPRE**
+A URL esperada é:
 
----
+`https://luftfahrzeuginstandhaltung.github.io/Komendir-system/`
 
-## 🇧🇷 Sobre
-
-Pesquisa, desenvolvimento e formação técnica em engenharia e manutenção de aeronaves — padrão **ATA 100**.
-
-**Do Brasil para o Mundo.**
-
----
-
-## 🔬 Especificações
-
-| Item | Detalhe |
-|---|---|
-| Nome | KOM-AK-X1-ALPHA |
-| Sede | Brasil |
-| Padrão | ATA 100 |
-| Referência | C-390 Millennium / Embraer |
-| Etapa | Estruturação · Documentação |
-
----
-
-## 📁 Arquivos
-
-- `komendir_completo.py` → Sistema principal
-- `index_holograma.html` → Site oficial
-- `komendir_dados.json` → Dados estruturados
-- `assets/komendir_visual.png` → Matriz visual
-
----
-
-## 🚀 Executar
-
-```bash
-pip install matplotlib
-python komendir_completo.py
+Os dados demonstrativos são exibidos no navegador. Registros persistentes usam `localStorage`; GitHub Pages não oferece backend para gravar diretamente no JSON do repositório.
