@@ -1,6 +1,70 @@
-const defaults=[{"id":"K-0001","nome":"Manutenção preventiva","cliente":"Logística Norte","status":"pendente","valor":2500,"data":"2026-09-20"},{"id":"K-0002","nome":"Instalação de sensores","cliente":"Matriz Industrial","status":"em andamento","valor":4300,"data":"2026-09-18"},{"id":"K-0003","nome":"Treinamento de operação","cliente":"Ativa Sistemas","status":"concluido","valor":1500,"data":"2026-09-15"}];
-const key='komendir_records';
-const money=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n||0);
-function data(){try{return JSON.parse(localStorage.getItem(key))||defaults}catch{return defaults}}
-function render(){const all=data(), f=document.querySelector('#filter').value, rows=f==='all'?all:all.filter(x=>x.status===f);document.querySelector('#total').textContent=all.length;document.querySelector('#pending').textContent=all.filter(x=>x.status==='pendente').length;document.querySelector('#done').textContent=all.filter(x=>x.status==='concluido').length;document.querySelector('#value').textContent=money(all.reduce((s,x)=>s+Number(x.valor||0),0));document.querySelector('#records').innerHTML=rows.map(x=>`<tr><td>${x.id}</td><td>${x.nome}</td><td>${x.cliente}</td><td><span class="badge">${x.status}</span></td><td>${money(x.valor)}</td><td>${x.data||'-'}</td></tr>`).join('')||'<tr><td colspan="6">Nenhum registro encontrado.</td></tr>'}
-document.querySelector('#filter').addEventListener('change',render);render();
+const layers = {
+  dados: {
+    name: 'DADOS',
+    title: 'Matriz de dados operacionais',
+    text: 'Monitoramento conceitual de integridade, latência e sincronização de sistemas aeronáuticos em tempo real.',
+    metrics: ['99.7%', '11 ms', '32.4k ft']
+  },
+  analise: {
+    name: 'ANÁLISE',
+    title: 'Análise de comportamento estrutural',
+    text: 'Mapeamento de vibração, carga, estabilidade e variação térmica em seções críticas.',
+    metrics: ['96.8%', '14 ms', '28.9k ft']
+  },
+  previsao: {
+    name: 'PREVISÃO',
+    title: 'Previsão de resposta de missão',
+    text: 'Simulação de cenários de risco, manutenção e rotas futuras sob parâmetros climáticos.',
+    metrics: ['92.4%', '18 ms', '35.1k ft']
+  },
+  quantico: {
+    name: 'QUÂNTICO',
+    title: 'Camada quântica operacional',
+    text: 'Sincronização adaptativa, aprendizagem contínua e detecção antecipada de resposta autônoma.',
+    metrics: ['99.9%', '9 ms', '41.0k ft']
+  }
+};
+
+const setLayer = (key) => {
+  const layer = layers[key];
+  if (!layer) return;
+
+  document.getElementById('layerBadge').textContent = layer.name;
+  document.getElementById('layerTitle').textContent = layer.title;
+  document.getElementById('layerText').textContent = layer.text;
+  document.getElementById('metric1').textContent = layer.metrics[0];
+  document.getElementById('metric2').textContent = layer.metrics[1];
+  document.getElementById('metric3').textContent = layer.metrics[2];
+
+  document.querySelectorAll('.nav-item').forEach((button) => {
+    button.classList.toggle('active', button.dataset.layer === key);
+  });
+};
+
+const refreshStats = () => {
+  document.getElementById('missions').textContent = 18 + Math.floor(Math.random() * 18);
+  document.getElementById('risk').textContent = Math.random() > 0.72 ? 'MODERADO' : 'BAIXO';
+  document.getElementById('fuel').textContent = `${Math.floor(45 + Math.random() * 55)}%`;
+  document.getElementById('signalValue').textContent = (90 + Math.random() * 9).toFixed(1);
+  document.getElementById('statusText').textContent = Math.random() > 0.3 ? 'ONLINE' : 'SYNC';
+};
+
+const buttons = document.querySelectorAll('.nav-item');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => setLayer(button.dataset.layer));
+});
+
+document.getElementById('generateReport').addEventListener('click', () => {
+  const btn = document.getElementById('generateReport');
+  btn.textContent = 'RELATÓRIO GERADO';
+  document.getElementById('statusText').textContent = 'SYNC';
+  refreshStats();
+
+  setTimeout(() => {
+    btn.textContent = 'GERAR RELATÓRIO';
+    document.getElementById('statusText').textContent = 'ONLINE';
+  }, 1200);
+});
+
+setLayer('dados');
+refreshStats();

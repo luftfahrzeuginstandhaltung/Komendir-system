@@ -50,13 +50,15 @@ O **KOM-AK-X1-ALPHA** é um projeto aeronáutico brasileiro voltado para pesquis
 ```text
 .
 ├── README.md
+├── app.py
+├── requirements.txt
 ├── komendir_completo.py
 ├── komendir_dados.json
+├── index.html
 ├── index_holograma.html
 ├── assets/
-│   ├── komendir_visual.png
-│   ├── styles.css
-│   └── script.js
+│   ├── script.js
+���   └── styles.css
 ├── .gitignore
 └── venv/
 ```
@@ -78,13 +80,25 @@ O **KOM-AK-X1-ALPHA** é um projeto aeronáutico brasileiro voltado para pesquis
 ### Requisitos
 - Python 3.8+
 - `matplotlib`
+- `Flask`
 
 ### Instalação
 ```bash
+pip install -r requirements.txt
 pip install matplotlib
 ```
 
-### Execução
+### Execução local do sistema web
+```bash
+python app.py
+```
+
+Abra:
+```text
+http://localhost:5000
+```
+
+### Execução do sistema terminal
 ```bash
 python komendir_completo.py
 ```
@@ -97,7 +111,8 @@ python komendir_completo.py
 - Geração de dashboard visual
 - Exportação de landing page holográfica
 - Estrutura em JSON para dados e relatórios
-- Simulação de sistema técnico e operacional
+- API Flask para leitura de dados e resumo operacional
+- Visual estático para GitHub Pages
 
 ---
 

@@ -1,25 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Komendir System</title>
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
-  <main class="container">
-    <header><h1>Komendir System</h1><p>Painel operacional</p></header>
-    <section class="stats">
-      <article><span>Total</span><strong id="total">0</strong></article>
-      <article><span>Pendentes</span><strong id="pending">0</strong></article>
-      <article><span>Concluídos</span><strong id="done">0</strong></article>
-      <article><span>Valor total</span><strong id="value">R$ 0,00</strong></article>
-    </section>
-    <section class="panel">
-      <div class="toolbar"><h2>Registros</h2><select id="filter"><option value="all">Todos</option><option value="pendente">Pendentes</option><option value="em andamento">Em andamento</option><option value="concluido">Concluídos</option></select></div>
-      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Cliente</th><th>Status</th><th>Valor</th><th>Data</th></tr></thead><tbody id="records"></tbody></table></div>
-    </section>
-  </main>
-  <script src="assets/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LexKomendirAirCraft | KOM-AK-X1-ALPHA</title>
+    <meta name="description" content="Projeto aeronáutico brasileiro LexKomendirAirCraft — KOM-AK-X1-ALPHA" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">K</div>
+          <div>
+            <small>AEROSPACE SYSTEM</small>
+            <h1>KOM-AK-X1-ALPHA</h1>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Camadas operacionais">
+          <button class="nav-item active" data-layer="dados">DADOS</button>
+          <button class="nav-item" data-layer="analise">ANÁLISE</button>
+          <button class="nav-item" data-layer="previsao">PREVISÃO</button>
+          <button class="nav-item" data-layer="quantico">QUÂNTICO</button>
+        </nav>
+
+        <div class="status-box">
+          <small>ESTADO</small>
+          <div class="status-row">
+            <span class="status-dot"></span>
+            <strong id="statusText">ONLINE</strong>
+          </div>
+          <p>Autoridade de operação ativa</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <small>PAINEL HOLOGRÁFICO</small>
+            <h2>Operação Aeronáutica Estratégica</h2>
+          </div>
+          <button id="generateReport" class="action-btn">GERAR RELATÓRIO</button>
+        </header>
+
+        <section class="hero-grid">
+          <article class="panel feature-panel">
+            <div class="panel-head">
+              <span>CAMADA ATIVA</span>
+              <b id="layerBadge">DADOS</b>
+            </div>
+            <h3 id="layerTitle">Matriz de dados operacionais</h3>
+            <p id="layerText">Monitoramento conceitual de integridade, latência e sincronização de sistemas aeronáuticos em tempo real.</p>
+
+            <div class="metrics-row">
+              <div class="metric-card">
+                <small>INTEGRIDADE</small>
+                <strong id="metric1">99.7%</strong>
+              </div>
+              <div class="metric-card">
+                <small>LATÊNCIA</small>
+                <strong id="metric2">11 ms</strong>
+              </div>
+              <div class="metric-card">
+                <small>ALTIMETRIA</small>
+                <strong id="metric3">32.4k ft</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel signal-panel">
+            <div class="panel-head">
+              <span>FLUXO DE SINAL</span>
+              <b class="live-badge">LIVE</b>
+            </div>
+            <div class="signal-bars">
+              <span style="height: 32%"></span>
+              <span style="height: 48%"></span>
+              <span style="height: 62%"></span>
+              <span style="height: 58%"></span>
+              <span style="height: 76%"></span>
+              <span style="height: 92%"></span>
+              <span style="height: 81%"></span>
+              <span style="height: 100%"></span>
+            </div>
+          </article>
+        </section>
+
+        <section class="stats-grid">
+          <article class="panel stat-card">
+            <small>MISSÕES ATIVAS</small>
+            <strong id="missions">24</strong>
+          </article>
+          <article class="panel stat-card">
+            <small>RISCO</small>
+            <strong id="risk">BAIXO</strong>
+          </article>
+          <article class="panel stat-card">
+            <small>CONSUMO</small>
+            <strong id="fuel">68%</strong>
+          </article>
+          <article class="panel stat-card">
+            <small>ÍNDICE DE SINAL</small>
+            <strong id="signalValue">94.2</strong>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel table-panel">
+            <div class="panel-head">
+              <span>ÚLTIMAS OPERAÇÕES</span>
+              <b>ATA 100</b>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Setor</th>
+                  <th>Estado</th>
+                  <th>Tempo</th>
+                  <th>Indicador</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Propulsão</td>
+                  <td>Estável</td>
+                  <td>02:15</td>
+                  <td>98.4</td>
+                </tr>
+                <tr>
+                  <td>Estrutura</td>
+                  <td>Verificado</td>
+                  <td>04:22</td>
+                  <td>96.1</td>
+                </tr>
+                <tr>
+                  <td>Sistema Elétrico</td>
+                  <td>Monitorado</td>
+                  <td>06:08</td>
+                  <td>99.1</td>
+                </tr>
+                <tr>
+                  <td>Comando</td>
+                  <td>Sincronizado</td>
+                  <td>08:40</td>
+                  <td>97.8</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="panel logs-panel">
+            <div class="panel-head">
+              <span>LOG DE INTEGRAÇÃO</span>
+              <b>NÓ 07</b>
+            </div>
+            <ul class="log-list">
+              <li>✓ Sinal de satélite estabilizado</li>
+              <li>✓ Rotas alternadas carregadas</li>
+              <li>⚡ Sincronização paramétrica ativa</li>
+              <li>◈ Camada quântica sincronizada</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/script.js"></script>
+  </body>
 </html>
